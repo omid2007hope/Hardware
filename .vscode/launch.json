@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "h:/Code/MyOwn/Hardware",
-      "program": "h:/Code/MyOwn/Hardware/build/Debug/outDebug",
+      "cwd": "h:/Code/MyOwn/Hardware/CPU",
+      "program": "h:/Code/MyOwn/Hardware/CPU/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
