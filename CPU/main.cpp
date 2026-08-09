@@ -49,6 +49,9 @@ int main() {
 	unsigned int logicalCores_TOT = std::thread::hardware_concurrency();
 	cpu.logicalCores_AVL = logicalCores_TOT;
 
-	std::cout << "Available Logical CPU Cores: " << cpu.logicalCores_AVL;
+	std::cout << "Available Logical CPU Cores: " << cpu.logicalCores_AVL << '\n';
+
+	std::cout << "\nPress Enter to exit...";
+	std::cin.get();
 	return 0;
 };
