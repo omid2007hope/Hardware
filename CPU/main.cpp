@@ -4,6 +4,15 @@
 // ! AVG --> Average
 // ! STD --> Standard
 
+/*
+In hardware terms, a thread is simply a stream of instructions that a CPU core executes.
+
+Think of your CPU core as a chef in a kitchen:
+
+Core: The chef themselves (the hardware unit that does the work).
+Thread: A specific recipe the chef is following.
+*/
+
 #include <iostream>
 #include <thread>
 
