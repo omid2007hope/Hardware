@@ -5,6 +5,7 @@
 
 
 
+
 void spin_lock(std::atomic<bool>& flag) {
 	while (flag.exchange(true, std::memory_order_acquired)) {
 
@@ -16,4 +17,11 @@ void spin_lock(std::atomic<bool>& flag) {
 		std::this_thread::yield();
 #endif
 	};
+};
+
+void write_hardware_register(uintptr_t base_address, uint32_t value) {
+
+	auto* reg = reinterpret_cast<volatile uint32_t*>(base_address);
+
+	*reg = value;
 };
