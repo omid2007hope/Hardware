@@ -1,3 +1,9 @@
+// ! Legend:
+// ! TOT --> Total
+// ! AVL --> Available
+// ! AVG --> Average
+// ! STD --> Standard
+
 #include <atomic>
 #include <new>
 
@@ -11,10 +17,10 @@ Portable Constant: std::hardware_destructive_interference_size is a C++17 consta
 Memory Overhead: The struct will likely be padded to fill at least one cache line (e.g., 64 bytes), even if the atomic counter itself is smaller (e.g., 8 bytes). This trade-off is standard to avoid the performance penalties of false sharing in concurrent programming. 
 */
 
-struct alignas(std::hardware_destructive_interference_size) STANDARD_CPU_DATA {
+struct alignas(std::hardware_destructive_interference_size)CPU_DATA_STD {
   std::atomic<uint64_t> counter{0};
 
-  int AvailableLogicalCores = 0; 
+  int logicalCores_AVL = 0; 
   
  };
 

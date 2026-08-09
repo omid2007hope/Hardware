@@ -1,17 +1,20 @@
+// ! Legend:
+// ! TOT --> Total
+// ! AVL --> Available
+// ! AVG --> Average
+// ! STD --> Standard
+
 #include <iostream>
 #include <thread>
 
 #include "CPU.hpp"
 
 int main() {
-  STANDARD_CPU_DATA cpu;
-  cpu.AvailableLogicalCores;
+  CPU_DATA_STD cpu;
 
-  
+  unsigned int logicalCores_TOT = std::thread::hardware_concurrency();
+  cpu.logicalCores_AVL = logicalCores_TOT;
 
-  unsigned int totalLogicalCores = std::thread::hardware_concurrency();
-  cpu.AvailableLogicalCores = totalLogicalCores;
-
-  std::cout << "Available Logical CPU Cores: " << cpu.AvailableLogicalCores;
+  std::cout << "Available Logical CPU Cores: " << cpu.logicalCores_AVL;
   return 0;
 };
