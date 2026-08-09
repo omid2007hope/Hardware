@@ -5,13 +5,14 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/outDebug.exe",
       "args": [],
       "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
       "externalConsole": true,
-      "cwd": "h:/Code/MyOwn/Hardware/.vscode",
-      "program": "h:/Code/MyOwn/Hardware/.vscode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
+      "preLaunchTask": "C/C++: g++.exe build active file",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

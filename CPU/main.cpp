@@ -13,13 +13,20 @@ Core: The chef themselves (the hardware unit that does the work).
 Thread: A specific recipe the chef is following.
 */
 
+/* 
+If a chef (Core) is making a sandwich (Thread A), they are busy. They can't make a salad at the exact same split-second with the same hands.
+
+Single Thread: The chef finishes the whole sandwich before even looking at the salad recipe.
+Multi-threading (Hyper-Threading): The chef puts the sandwich in the toaster (waiting), and quickly chops some lettuce for the salad (Thread B) while waiting. To you, it looks like they are doing both at once, but they are actually switching tasks incredibly fast to avoid standing idle.
+*/
+
 #include <iostream>
 #include <thread>
 
 #include "cpu.hpp"
 
 
-#if defined(__x86_64__) || defined(_M_X64);
+#if defined(__x86_64__) || defined(_M_X64)
 #include <cpuid.h>
 bool has_avx2() {
 	unsigned int eax, ebx, ecx, edx;

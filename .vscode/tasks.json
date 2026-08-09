@@ -9,6 +9,7 @@
         "-fdiagnostics-color=always",
         "-g",
         "${workspaceFolder}/CPU/main.cpp",
+        "${workspaceFolder}/CPU/cpu.cpp",
         "-o",
         "${workspaceFolder}/build/Debug/outDebug.exe"
       ],
@@ -22,7 +23,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "Task to build CPU/main.cpp into outDebug.exe"
+      "detail": "Task to build CPU project into outDebug.exe"
     }
   ]
 }
