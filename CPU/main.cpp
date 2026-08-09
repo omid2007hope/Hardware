@@ -4,11 +4,14 @@
 #include "CPU.hpp"
 
 int main() {
-  CPU_DATA cpu;
+  STANDARD_CPU_DATA cpu;
+  cpu.AvailableLogicalCores;
 
-  unsigned int cores = std::thread::hardware_concurrency();
-  cpu.cores = cores;
+  
 
-  std::cout << cpu.cores;
+  unsigned int totalLogicalCores = std::thread::hardware_concurrency();
+  cpu.AvailableLogicalCores = totalLogicalCores;
+
+  std::cout << "Available Logical CPU Cores: " << cpu.AvailableLogicalCores;
   return 0;
 };
