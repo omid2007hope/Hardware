@@ -8,9 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/build/Debug/outDebug.exe",
-      "preLaunchTask": "C/C++: g++.exe build active file",
+      "cwd": "h:/Code/MyOwn/Hardware/.vscode",
+      "program": "h:/Code/MyOwn/Hardware/.vscode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
