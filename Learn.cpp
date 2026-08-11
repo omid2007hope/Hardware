@@ -1,51 +1,60 @@
+#include <iostream>
 
-// 2 or 4 bytes!
-// has a an address in memory!
+// 2 or 4 bytes (typically 4 bytes on 32/64-bit systems)!
+// Has an address in memory!
 int num = 100;
 
-// health nickname of num
-// we've basically created a read only version of num that's not a copy but a reference, reflection of you in the mirror is not a copy of you it's literally you that can be used to shave as data paramiter
-int& health = num;
+// health: nickname (alias) of num
+// We've created a read-only reference (const int&)—not a copy.
+// A reflection of you in the mirror is not a copy of you, it's literally you used as a parameter.
+const int& health = num;
 
-// the address that num is stored at in memory!
-// i think you can's say an int = ptr that's why use & not sure of course
+// The address where num is stored in memory!
+// An int variable cannot directly hold a memory address, which is why we use `int*` and `&num`.
 int* numsAddress = &num;
 
-// structure
-// type mansegment and clean architect
+// Structure
+// Type management and clean architecture
 struct Axis {
-	// why assign a value 0
-	// IMPORTAMT for garbage control and safety
+	// Why assign a default value 0?
+	// IMPORTANT for garbage value prevention and safety.
 	int x = 0;
 	int y = 0;
 };
 
 // Standard class
 class Calculate {
-
 private:
 public:
 	void sum(const Axis& numbers);
 };
 
-// Axis &numbers --> in memory(RAM) go in the address that Axis(x and y) is stored at get what is inside with the nickname od numbers
-// no copy -- it's ;literally x and y but has nickname
-void sum(const Axis& numbers) {
+// Axis &numbers --> in memory (RAM), go to the address where Axis (x and y) is stored
+// and access what is inside using the alias `numbers`.
+// No copy -- it's literally x and y with a nickname.
+void Calculate::sum(const Axis& numbers) {
 	int total = numbers.x + numbers.y;
-};
+	std::cout << "Total sum: " << total << std::endl;
+}
 
-// the other shit that i have no still fully understood
+int main() {
+	// Practice examples:
 
-//1th
-int* a = new int;
-*a = 35;
-std::cout << a;
-delete a;
+	// 1st: Dynamic memory allocation on the heap
+	int* a = new int;
+	*a = 35;
+	std::cout << "Address stored in a: " << a << std::endl;
+	std::cout << "Value pointed to by *a: " << *a << std::endl;
+	delete a; // Free memory allocated on heap
 
-//2th
-int something = 100;
-int* ptr = &something
+	// 2nd: Storing address of a local stack variable
+	int something = 100;
+	int* ptr = &something;
 
-		   // you wanna cout the ptr instead of cout &something
-		   std::cout
-	   << ptr;
+	// Printing ptr outputs the memory address of 'something' instead of &something
+	std::cout << "Pointer address (ptr): " << ptr << std::endl;
+	std::cout << "Value stored at ptr (*ptr): " << *ptr << std::endl;
+
+	return 0;
+}
+
