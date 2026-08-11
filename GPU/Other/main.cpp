@@ -31,5 +31,8 @@ int main() {
 	cudaFree(d_A);
 	cudaFree(d_B);
 	cudaFree(d_C);
+
+	std::cout << "CUDA kernel completed successfully!\nPress Enter to exit...";
+	std::cin.get();
 	return 0;
 };

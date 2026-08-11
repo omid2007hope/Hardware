@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "Debug CPU Project",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/Debug/outDebug.exe",
@@ -12,7 +12,27 @@
       "externalConsole": false,
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
-      "preLaunchTask": "C/C++: g++.exe build active file",
+      "preLaunchTask": "Build CPU (g++)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Debug GPU (CUDA) Project",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/Debug/outDebug.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "preLaunchTask": "Build GPU (nvcc)",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

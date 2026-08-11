@@ -3,7 +3,7 @@
   "tasks": [
     {
       "type": "shell",
-      "label": "C/C++: g++.exe build active file",
+      "label": "Build CPU (g++)",
       "command": "g++",
       "args": [
         "-fdiagnostics-color=always",
@@ -22,8 +22,25 @@
       "group": {
         "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Build GPU (nvcc)",
+      "command": "nvcc",
+      "args": [
+        "-g",
+        "-G",
+        "${workspaceFolder}/GPU/Other/main.cpp",
+        "-o",
+        "${workspaceFolder}/build/Debug/outDebug.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
-      "detail": "Task to build CPU project into outDebug.exe"
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }
