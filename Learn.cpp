@@ -34,8 +34,18 @@ void sum(const Axis& numbers) {
 	int total = numbers.x + numbers.y;
 };
 
+// the other shit that i have no still fully understood
 
-int main() {
+//1th
+int* a = new int;
+*a = 35;
+std::cout << a;
+delete a;
 
-	std::cout << numsAddress;
-};
+//2th
+int something = 100;
+int* ptr = &something
+
+		   // you wanna cout the ptr instead of cout &something
+		   std::cout
+	   << ptr;
